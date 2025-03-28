@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import headerData from '../../data/headerData';
-import '../Header/Header.css';
+import '../../styles/Header.css';
 
 const Content = () => {
   const [inMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,27 +34,16 @@ const Content = () => {
           </h1>
           {/* Navegação */}
           <nav>
-            <ul onClick="getElementById('close-menu').checked = false">
+            <ul
+              onClick={() =>
+                (document.getElementById('close-menu').checked = false)
+              }
+            >
               {headerData.menuItems.map((item, index) => (
                 <li key={index}>
                   <a href={item.href}>{item.text}</a>
                 </li>
               ))}
-              <li>
-                <a href="#servicos">{headerData.menuItems.id(2)}</a>
-              </li>
-              <li>
-                <a href="#detalhes">{headerData.menuItems.id(3)}</a>
-              </li>
-              <li>
-                <a href="#galeria">{headerData.menuItems.id(4)}</a>
-              </li>
-              <li>
-                <a href="#valores">{headerData.menuItems.id(5)}</a>
-              </li>
-              <li>
-                <a href="#contato">{headerData.menuItems.id(6)}</a>
-              </li>
             </ul>
           </nav>
         </div>
