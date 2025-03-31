@@ -1,37 +1,37 @@
 import React from 'react';
 import mainData from '../../data/mainData';
-import '../../styles/Main.css';
+import '../../styles/global/Base.css';
+import '../../styles/components/Main.css';
 
 const Main = () => {
   return (
     <>
-      <section id="home" class="home main-bg section">
-        <div class="main-content home-content">
-          <div class="home-text-content">
-            <h1>{mainData.homeH1}</h1>
+      <section id="home" className="home main-bg section">
+        <div className="main-content home-content">
+          <div className="home-text-content">
             <h2>{mainData.homeH2}</h2>
           </div>
-          <div class="menu-img">
+          <div className="menu-img">
             <img src="../Work/img/home.svg" alt="" />
           </div>
         </div>
       </section>
-      <section id="servicos" class="white-bg section">
-        <div class="main-content servicos-content">
+      <section id="servicos" className="white-bg section">
+        <div className="main-content servicos-content">
           <h1>{mainData.servicosH1}</h1>
           {mainData.servicosH2.map((servico, index) => (
             <p key={index}>{servico}</p>
           ))}
         </div>
       </section>
-      <section id="detalhes" class="main-bg section">
-        <div class="main-content detalhes-content">
-          <h1 class="main-detalhes">{mainData.detalhesH1}</h1>
-          <p class="description-detalhes">{mainData.detalhesDescription}</p>
-          <div class="detalhes-grid">
+      <section id="detalhes" className="main-bg section">
+        <div className="main-content detalhes-content">
+          <h1 className="main-detalhes">{mainData.detalhesH1}</h1>
+          <p className="description-detalhes">{mainData.detalhesDescription}</p>
+          <div className="detalhes-grid">
             <article>
               {mainData.descricaoServicos.map((descricaoServicos, index) => (
-                <div class="detalhes-card" key={index}>
+                <div className="detalhes-card" key={index}>
                   <h2>{descricaoServicos.titulo}</h2>
                   <p>{descricaoServicos.descricao}</p>
                 </div>
@@ -40,22 +40,22 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <section id="galeria" class="white-bg section">
-        <div class="main-content galeria-content">
-          <h2 class="main-galeria">{mainData.galeriaH1}</h2>
-          <div class="galeria-grid">
+      <section id="galeria" className="white-bg section">
+        <div className="main-content galeria-content">
+          <h2 className="main-galeria">{mainData.galeriaH1}</h2>
+          <div className="galeria-grid">
             {mainData.galeriaImagens.map((imagens, index) => (
-              <div class="galeria-card" key={index}>
+              <div className="galeria-card" key={index}>
                 <img src={imagens.src} alt={imagens.alt} />
               </div>
             ))}
           </div>
         </div>
       </section>
-      <section id="valores" class="main-bg section">
-        <div class="main-content valores-content responsive-table">
+      <section id="valores" className="main-bg section">
+        <div className="main-content valores-content responsive-table">
+          <h1 className="main-valores">{mainData.valoresH1}</h1>
           <table>
-            <h2 class="main-valores">{mainData.valoresH1}</h2>
             <caption>{mainData.valoresDescription}</caption>
             <thead>
               <tr>
@@ -65,25 +65,23 @@ const Main = () => {
                   </th>
                 ))}
               </tr>
-              <tr>
-                {mainData.valoresServicos.map((valores, index) => (
-                  <tr key={index}>
-                    <p>{valores}</p>
-                  </tr>
-                ))}
-              </tr>
+              {mainData.valoresServicos.map((valores, index) => (
+                <tr key={index}>
+                  <td>{valores}</td>
+                </tr>
+              ))}
             </thead>
           </table>
         </div>
       </section>
-      <section id="contato" class="white-bg section">
-        <div class="main-content contact-content contact">
-          <h2 class="main-valores">{mainData.contatoH1}</h2>
+      <section id="contato" className="white-bg section">
+        <div className="main-content contact-content contact">
+          <h2 className="main-valores">{mainData.contatoH1}</h2>
           <legend>{mainData.contatoDescription}</legend>
-          <div class="form-group">
+          <div className="form-group">
             <form>
               {mainData.dadosContato.map((item, index) => (
-                <div key={index} class="form-group">
+                <div key={index} className="form-group">
                   <input
                     type={item.type}
                     name={item.name}
@@ -96,7 +94,7 @@ const Main = () => {
           </div>
         </div>
       </section>
-      <a href="#home" class="back-to-top">
+      <a href="#home" className="back-to-top">
         <h1>➤</h1>
       </a>
     </>

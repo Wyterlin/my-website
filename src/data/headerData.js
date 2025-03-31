@@ -1,11 +1,11 @@
 const headerData = {
   CWS: 'CWS',
-  menuItems: [
-    { id: 1, href: '#home', text: 'Home' },
-    { id: 2, href: '#servicos', text: 'Serviços' },
-    { id: 3, href: '#detalhes', text: 'Detalhes' },
-    { id: 4, href: '#galeria', text: 'Galeria' },
-    { id: 5, href: '#valores', text: 'Valores' },
+  menuSections: [
+    { id: 1, href: '#perfil', text: 'Perfil' },
+    { id: 2, href: '#experiencia', text: 'Experiência' },
+    { id: 3, href: '#formacao-academica', text: 'Formação Acadêmica' },
+    { id: 4, href: '#certificados', text: 'Certificados' },
+    { id: 5, href: '#competencias', text: 'Competências' },
     { id: 6, href: '#contato', text: 'Contato' },
   ],
 };

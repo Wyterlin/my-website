@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import headerData from '../../data/headerData';
-import '../../styles/Header.css';
+import '../../styles/global/Base.css';
+import '../../styles/global/Components.css';
+import '../../styles/components/Header.css';
 
 const Content = () => {
   const [inMenuOpen, setIsMenuOpen] = useState(false);
@@ -26,11 +28,11 @@ const Content = () => {
         title="close menu"
       ></label>
       {/* Menu */}
-      <aside className="menu white-bg">
-        <div className="main-content menu-content">
+      <aside className="menu">
+        <div className="menu-content">
           {/* Logo com link e comportamento ao clicar */}
           <h1 onClick={toggleMenu}>
-            <a href="#home">{headerData.CWS}</a>
+            <a href="#perfil">{headerData.CWS}</a>
           </h1>
           {/* Navegação */}
           <nav>
@@ -39,7 +41,7 @@ const Content = () => {
                 (document.getElementById('close-menu').checked = false)
               }
             >
-              {headerData.menuItems.map((item, index) => (
+              {headerData.menuSections.map((item, index) => (
                 <li key={index}>
                   <a href={item.href}>{item.text}</a>
                 </li>
@@ -48,8 +50,6 @@ const Content = () => {
           </nav>
         </div>
       </aside>
-      {/* Espaçamento para o menu */}
-      <div className="menu-spacing"></div>
     </>
   );
 };

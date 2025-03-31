@@ -1,7 +1,5 @@
 const mainData = {
-  homeH1: 'CWS',
-  homeH2:
-    'Olá! Seja muito bem-vindo ao meu site. Fico feliz em tê-lo aqui na minha primeira criação na web.',
+  homeH2: 'Olá! Seja muito bem-vindo ao meu site.',
   /*Aba de Serviços*/
   servicosH1: 'Serviços',
   servicosH2: ['Formatação', 'Limpeza de PC', 'Otimização', 'Atualização'],
