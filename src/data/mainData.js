@@ -1,8 +1,30 @@
+import homeImg from '../assets/images/sobre.svg';
+
 const mainData = {
-  homeH2: 'Olá! Seja muito bem-vindo ao meu site.',
+  /*Aba Sobre*/
+  sobreTitulo: 'Sobre',
+  sobreDescricaoParagrafo1:
+    'Sou um profissional da área de Tecnologia da Informação em constante evolução, atualmente em transição de carreira para Desenvolvedor Full-Stack. Tenho experiência com tecnologias como JavaScript, HTML, CSS, Python e bancos de dados como MySQL e SAP HANA, realizando bloqueios, consultas e automações.',
+  sobreDescricaoParagrafo2:
+    'Atualmente trabalho com suporte do sistema SAP Business One, utilizando juntamente as ferramentas SAP Hana e Crystall Reports.',
+  sobreDescricaoParagrafo3:
+    'Estou sempre em busca de novos desafios e oportunidades para aplicar minhas habilidades em projetos inovadores, colaborativos e que gerem valor para a sociedade.',
+  sobreImagem: {
+    src: homeImg,
+    alt: 'Imagem de um computador com código',
+  },
+
   /*Aba de Serviços*/
-  servicosH1: 'Serviços',
-  servicosH2: ['Formatação', 'Limpeza de PC', 'Otimização', 'Atualização'],
+  experienciaH1: 'Experiências',
+  experienciaEmpresas: [
+    {
+      empresa: 'FastDrywall',
+      descricao:
+        'Suporte, Treinamentos de utilização do sistema, consulta no BD (Banco de Dados) e envolvimento ativo no desenvolvimento de processos a serem utilizados no sistema Shop Control 9. Adquiri conhecimento básico da linguagem de programação SQL, utilizadas para realizar consultas e modificações no banco de dados. Em um período posterior expandi o meu conhecimento para a linguagem de programação Python para automatizações de processos e outras tarefas diárias e me aprofundei, também, na linguagem SQL HANA gerando bloqueios e consultas no BD.',
+    },
+    {},
+  ],
+
   /*Aba de Detalhes*/
   detalhesH1: 'Detalhes',
   detalhesDescription: 'Descrição dos serviços.',

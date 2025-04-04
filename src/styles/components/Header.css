@@ -1,12 +1,10 @@
-/*Menu Geral*/
-.menu {
+/*Menu Navegação*/
+nav {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 1rem;
     width: 100%;
-    z-index: 0;
     border-bottom: 0.1rem solid var(--primary-color);
 }
 
@@ -22,16 +20,15 @@
 
 
 /*Logo*/
-.menu-content h1 a {
+.logo h1 a {
     color: inherit;
     margin-left: var(--gap);
     font-size: 2.7rem;
     color: var(--primary-color);
 }
 
-
 /*Seções*/
-.menu-content nav ul li a {
+.secoes ul li a {
     position: relative;
     display: inline-block;
     text-decoration: none;
@@ -42,7 +39,7 @@
 }
 
 /*Sublinhado nas Seções*/
-.menu-content nav ul li a::after {
+.secoes ul li a::after {
     content: '';
     display: block;
     position: absolute;
@@ -56,12 +53,12 @@
 }
 
 /*Animação do Sublinhado das seções*/
-.menu-content nav ul li a:hover::after {
+.secoes ul li a:hover::after {
     width: 100%;
 }
 
 /*Seções - Versão Mobile*/
-.menu-content nav ul {
+.secoes ul {
     list-style: none;
     display: flex;
 }

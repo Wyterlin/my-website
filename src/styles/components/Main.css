@@ -1,44 +1,110 @@
-.home-content {
-    position: relative;
+/*Sections*/
+
+/*Perfil*/
+.perfil-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
     min-height: 100vh;
 }
 
-.home-text-content,
+/*Layout*/
+.sobre-content,
 .menu-img {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
-.menu-img img {
-    max-width: 80%;
+/*Título*/
+.sobre-content h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
 }
 
-.home-img img,
-.intro-img svg {
+/*Descrição*/
+.sobre-content p {
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+/*Imagem*/
+.menu-img img {
+    max-width: 80%;
     max-width: 100%;
     height: auto;
 }
 
-.servicos-content {
-    max-width: 64rem;
+/*Experiência*/
+.experiencia-content {
     display: flex;
+    text-align: left;
     flex-direction: column;
-    flex-wrap: nowrap;
     justify-content: center;
+    max-width: 64rem;
     min-height: 100vh;
-    text-align: center;
+    flex-wrap: nowrap;
 }
 
-.detalhes-content {
+.experiencia-content h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+/*Nome das Empresas*/
+.experiencias-cards h2 {
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+
+/*Descrição*/
+.experiencias-cards {
+    font-size: 2rem;
+}
+
+/*Cards de cada Empresa*/
+.experiencias-cards {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+/*Formação Acadêmica*/
+.formacao-academica-content {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
     min-height: 100vh;
 }
+
+/*Certificados*/
+.certificados-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/*Competências*/
+.competencias-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: left;
+    min-height: 100vh;
+}
+
+/*Contato*/
+.contato-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.main-content {
+    max-width: 200rem;
+    margin: auto auto;
+    padding: var(--gap);
+}
+
 
 .detalhes-grid {
     display: grid;
@@ -73,12 +139,6 @@
     transform: rotate(30%);
 }
 
-.galeria-content {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    min-height: 100vh;
-}
 
 .galeria-grid {
     display: grid;
@@ -114,12 +174,6 @@
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
 
-.valores-content {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    min-height: 100vh;
-}
 
 .main-valores {
     margin-bottom: 2rem;
@@ -135,12 +189,6 @@
     grid-column: 2;
 }
 
-.contact-content {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    min-height: 100vh;
-}
 
 .contact-content h2 {
     text-align: center;
@@ -242,26 +290,6 @@ body .full-width {
     font-size: 5rem;
     transition: all 600ms ease-in-out;
     max-width: 100%;
-}
-
-
-
-.main-bg {
-    background-image: url("../../assets/images/Main-Bg.svg");
-    background-size: cover;
-    background-position: center center;
-    color: var(--secondary-color);
-}
-
-.white-bg {
-    background: var(--secondary-color);
-    color: var(--primary-color);
-}
-
-.main-content {
-    max-width: 200rem;
-    margin: auto auto;
-    padding: var(--gap);
 }
 
 .section {

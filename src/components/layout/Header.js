@@ -26,16 +26,17 @@ const Content = () => {
         className="close-menu-label"
         htmlFor="close-menu"
         title="close menu"
-      ></label>
+      ></label>{' '}
       {/* Menu */}
-      <aside className="menu">
+      <nav>
         <div className="menu-content">
           {/* Logo com link e comportamento ao clicar */}
-          <h1 onClick={toggleMenu}>
-            <a href="#perfil">{headerData.CWS}</a>
-          </h1>
-          {/* Navegação */}
-          <nav>
+          <div className="logo">
+            <h1 onClick={toggleMenu}>
+              <a href="#perfil">{headerData.CWS}</a>
+            </h1>
+          </div>
+          <div className="secoes">
             <ul
               onClick={() =>
                 (document.getElementById('close-menu').checked = false)
@@ -47,9 +48,9 @@ const Content = () => {
                 </li>
               ))}
             </ul>
-          </nav>
+          </div>
         </div>
-      </aside>
+      </nav>
     </>
   );
 };

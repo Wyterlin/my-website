@@ -1,0 +1,17 @@
+main {
+    display: block;
+}
+
+.bg-black {
+    background-image: url("../../assets/images/bg-black.svg");
+    background-size: cover;
+    background-position: center center;
+    color: var(--secondary-color);
+}
+
+.bg-white {
+    background-image: url("../../assets/images/bg-white.svg");
+    background-size: cover;
+    background-position: center center;
+    color: var(--primary-color);
+}
