@@ -1,8 +1,8 @@
-import React from "react";
-import mainData from "../../data/mainData";
-import "../../styles/global/Base.css";
-import "../../styles/global/Layout.css";
-import "../../styles/components/Main.css";
+import React from 'react';
+import mainData from '../../data/mainData';
+import '../../styles/global/Base.css';
+import '../../styles/global/Layout.css';
+import '../../styles/components/Main.css';
 
 const Main = () => {
   return (
@@ -12,18 +12,18 @@ const Main = () => {
           <div className="section-content profile-content">
             <div className="about-content">
               <div>
-                <h1>{mainData.titulo}</h1>
+                <h1>{mainData.aboutTitle}</h1>
               </div>
               <div>
-                {mainData.descricao.map((descricao, index) => (
-                  <p key={index}>{descricao}</p>
+                {mainData.aboutDescription.map((aboutDesciption, index) => (
+                  <p key={index}>{aboutDesciption}</p>
                 ))}
               </div>
             </div>
             <div className="image-menu">
               <img
-                src={mainData.sobreImagem.src}
-                alt={mainData.sobreImagem.alt}
+                src={mainData.aboutImage.src}
+                alt={mainData.aboutImage.alt}
               />
             </div>
           </div>
@@ -31,55 +31,56 @@ const Main = () => {
         <section id="experience-section" className="bg-white section">
           <div className="section-content experience-content">
             <div className="experience">
-              <h1>{mainData.experienciaH1}</h1>
+              <h1>{mainData.experienceTitle}</h1>
             </div>
-            {mainData.experienciaEmpresas.map((experiencia, index) => (
+            {mainData.experience.map((experience, index) => (
               <div className="experience-cards" key={index}>
                 <div className="company-name">
-                  <h2>{experiencia.empresa.nome}</h2>
+                  <h2>{experience.enterprise.name}</h2>
                 </div>
                 <div className="company-description">
-                  {experiencia.empresa.descricao.map((descricao, idx) => (
-                    <p key={idx}>{descricao}</p>
+                  {experience.enterprise.description.map((description, idx) => (
+                    <p key={idx}>{description}</p>
                   ))}
                 </div>
               </div>
             ))}
           </div>
         </section>
-        <section id="formacao-academica" className="bg-black section">
-          <div className="section-content formacao-academica-content">
-            <h1 className="main-detalhes">{mainData.detalhesH1}</h1>
-            <p className="description-detalhes">
-              {mainData.detalhesDescription}
-            </p>
-            <div className="detalhes-grid">
+        <section id="academic-training" className="bg-black section">
+          <div className="section-content academic-training-content">
+            <h1>{mainData.academicTrainingTitle}</h1>
+            <p>{mainData.academicTrainingDescription}</p>
+            <div className="details-grid">
               <article>
-                {mainData.descricaoServicos.map((descricaoServicos, index) => (
-                  <div className="detalhes-card" key={index}>
-                    <h2>{descricaoServicos.titulo}</h2>
-                    <p>{descricaoServicos.descricao}</p>
+                {mainData.academicTraining.map((academicTraining, index) => (
+                  <div className="details-card" key={index}>
+                    <h2>{academicTraining.name}</h2>
+                    {academicTraining.description.map((description, idx) => (
+                      <p key={idx}>{description}</p>
+                    ))}
                   </div>
                 ))}
               </article>
             </div>
           </div>
         </section>
-        <section id="certificados" className="bg-white section">
-          <div className="section-content certificados-content">
-            <h2 className="main-galeria">{mainData.galeriaH1}</h2>
-            <div className="galeria-grid">
-              {mainData.galeriaImagens.map((imagens, index) => (
-                <div className="galeria-card" key={index}>
-                  <img src={imagens.src} alt={imagens.alt} />
+        <section id="technologies" className="bg-white section">
+          <div className="section-content technologies-content">
+            <h1>{mainData.technologiesTitle}</h1>
+            <div className="logo-grid">
+              {mainData.technologiesLogos.map((logos, index) => (
+                <div className="logo-card" key={index}>
+                  <img src={logos.src} alt={logos.alt} />
+                  <h3>{logos.name}</h3>
                 </div>
               ))}
             </div>
           </div>
         </section>
-        <section id="competencias" className="bg-black section">
-          <div className="section-content competencias-content responsive-table">
-            <h1 className="main-valores">{mainData.valoresH1}</h1>
+        <section id="skills" className="bg-black section">
+          <div className="section-content skills-content responsive-table">
+            <h1 className="main-values">{mainData.valoresH1}</h1>
             <table>
               <caption>{mainData.valoresDescription}</caption>
               <thead>
@@ -99,9 +100,9 @@ const Main = () => {
             </table>
           </div>
         </section>
-        <section id="contato" className="bg-white section">
-          <div className="section-content contato-content contact">
-            <h2 className="main-valores">{mainData.contatoH1}</h2>
+        <section id="contact" className="bg-white section">
+          <div className="section-content contact-content contact">
+            <h2 className="main-values">{mainData.contatoH1}</h2>
             <legend>{mainData.contatoDescription}</legend>
             <div className="form-group">
               <form>
