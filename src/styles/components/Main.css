@@ -1,7 +1,7 @@
 /*Sections*/
 
 /*Perfil*/
-.perfil-content {
+.profile-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
@@ -9,63 +9,71 @@
 }
 
 /*Layout*/
-.sobre-content,
-.menu-img {
+.about-content,
+.image-menu {
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
 /*Título*/
-.sobre-content h1 {
+.about-content h1 {
     font-size: 5rem;
     padding-bottom: 3rem;
 }
 
 /*Descrição*/
-.sobre-content p {
+.about-content p {
     font-size: 2.5rem;
     padding-bottom: 3rem;
 }
 
 /*Imagem*/
-.menu-img img {
+.image-menu img {
     max-width: 80%;
     max-width: 100%;
     height: auto;
 }
 
 /*Experiência*/
-.experiencia-content {
+.experience-content {
     display: flex;
     text-align: left;
     flex-direction: column;
     justify-content: center;
-    max-width: 64rem;
+    max-width: 100%;
     min-height: 100vh;
     flex-wrap: nowrap;
 }
 
-.experiencia-content h1 {
+/*Título*/
+.experience h1 {
     font-size: 5rem;
     padding-bottom: 3rem;
 }
 
-/*Nome das Empresas*/
-.experiencias-cards h2 {
-    font-size: 3.5rem;
+/*Empresas*/
+.experience-cards {
     padding-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 /*Descrição*/
-.experiencias-cards {
-    font-size: 2rem;
+.company-name h2 {
+    font-size: 3.5rem;
 }
 
-/*Cards de cada Empresa*/
-.experiencias-cards {
-    background-color: rgba(255, 255, 255, 0.7);
+.company-description {
+    font-size: 2rem;
+    padding: 0 2rem 2rem 3rem;
 }
+
+
+
+
+
+
+
 
 /*Formação Acadêmica*/
 .formacao-academica-content {
@@ -98,13 +106,6 @@
     justify-content: center;
     min-height: 100vh;
 }
-
-.main-content {
-    max-width: 200rem;
-    margin: auto auto;
-    padding: var(--gap);
-}
-
 
 .detalhes-grid {
     display: grid;
@@ -290,11 +291,6 @@ body .full-width {
     font-size: 5rem;
     transition: all 600ms ease-in-out;
     max-width: 100%;
-}
-
-.section {
-    min-height: 100vh;
-    max-height: auto;
 }
 
 body .full-width {

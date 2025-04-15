@@ -2,6 +2,17 @@ main {
     display: block;
 }
 
+.section {
+    min-height: 100vh;
+    max-height: auto;
+}
+
+.section-content {
+    max-width: 200rem;
+    margin: auto auto;
+    padding: var(--gap);
+}
+
 .bg-black {
     background-image: url("../../assets/images/bg-black.svg");
     background-size: cover;
