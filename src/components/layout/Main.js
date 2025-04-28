@@ -47,10 +47,11 @@ const Main = () => {
             ))}
           </div>
         </section>
-        <section id="academic-training" className="bg-black section">
+        <section id="academic-training-section" className="bg-black section">
           <div className="section-content academic-training-content">
-            <h1>{mainData.academicTrainingTitle}</h1>
-            <p>{mainData.academicTrainingDescription}</p>
+            <div className="academic-training">
+              <h1>{mainData.academicTrainingTitle}</h1>
+            </div>
             <div className="details-grid">
               <article>
                 {mainData.academicTraining.map((academicTraining, index) => (
@@ -78,32 +79,12 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="skills" className="bg-black section">
-          <div className="section-content skills-content responsive-table">
-            <h1 className="main-values">{mainData.valoresH1}</h1>
-            <table>
-              <caption>{mainData.valoresDescription}</caption>
-              <thead>
-                <tr>
-                  {mainData.valoresTitulos.map((titulo, index) => (
-                    <th key={index}>
-                      <p>{titulo}</p>
-                    </th>
-                  ))}
-                </tr>
-                {mainData.valoresServicos.map((valores, index) => (
-                  <tr key={index}>
-                    <td>{valores}</td>
-                  </tr>
-                ))}
-              </thead>
-            </table>
-          </div>
-        </section>
-        <section id="contact" className="bg-white section">
+        <section id="contact-section" className="bg-black section">
           <div className="section-content contact-content contact">
-            <h2 className="main-values">{mainData.contatoH1}</h2>
-            <legend>{mainData.contatoDescription}</legend>
+            <div className="contact">
+              <h2 className="main-values">{mainData.contatoH1}</h2>
+              <legend>{mainData.contatoDescription}</legend>
+            </div>
             <div className="form-group">
               <form>
                 {mainData.dadosContato.map((item, index) => (

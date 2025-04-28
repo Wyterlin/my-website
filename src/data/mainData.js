@@ -3,8 +3,8 @@ import logoJS from '../assets/images/JavaScript.png';
 import logoPython from '../assets/images/Python.png';
 import logoReact from '../assets/images/React.png';
 import logoHtml from '../assets/images/html.png';
-import logoCss from '../assets/images/html.png';
-import logoMySql from '../assets/images/html.png';
+import logoCss from '../assets/images/CSS.png';
+import logoMySql from '../assets/images/MySql.png';
 
 const mainData = {
   /*Sobre*/
@@ -38,9 +38,12 @@ const mainData = {
   academicTrainingDescription: 'Formação acadêmica e cursos realizados.',
   academicTraining: [
     {
+      name: 'Estácio',
+      description: ['Bacharelado', 'Ciência da Computação.'],
+    },
+    {
       name: 'Curso Microlins',
       description: [
-        'Experiência Acadêmica e Conquista Profissional',
         'Durante o curso, fui membro de um grupo de estudo formado por 5 participante, com os quais construímos uma relação de amizade. Cooperação em estudos, exames e paper foi a abordagem adotada pelo grupo.',
         'Por minha realização, recebi dois certificados de aluno nota mil, por ter obtido uma das melhores notas em todo o decorrer do curso e de aluno destaque.',
         'Realizei também neste período um curso de capacitação para líder.',
@@ -52,7 +55,7 @@ const mainData = {
   technologiesTitle: 'Tecnologias Utilizadas',
   technologiesLogos: [
     {
-      name: 'Java Script',
+      name: 'JS',
       src: logoJS,
       alt: 'Java Script',
     },
@@ -73,12 +76,12 @@ const mainData = {
     },
     {
       name: 'CSS',
-      src: 'https://cdn.worldvectorlogo.com/logos/css-3.svg',
+      src: logoCss,
       alt: 'CSS',
     },
     {
       name: 'MySQL',
-      src: 'https://cdn-icons-png.flaticon.com/512/5968/5968363.png',
+      src: logoMySql,
       alt: 'MySQL',
     },
   ],
@@ -88,10 +91,10 @@ const mainData = {
   valoresDescription: 'Valores dos serviços prestados.',
   valoresTitulos: ['Serviço', 'Valor'],
   valoresServicos: ['Formatação', 'Limpeza de PC', 'Otimização', 'Atualização'],
+
   /*Aba Contato*/
   contatoH1: 'Contato',
-  contatoDescription:
-    'Entre em contato para mais informações ou para solicitar um orçamento.',
+  contatoDescription: 'Entre em contato para mais informações.',
   dadosContato: [
     {
       type: 'text',

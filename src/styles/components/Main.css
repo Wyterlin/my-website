@@ -76,30 +76,48 @@
     min-height: 100vh;
 }
 
+.academic-training h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+.academic-training h2 {
+    font-size: 3.5rem;
+}
+
+.details-card {
+    padding-bottom: 3rem;
+}
+
+.details-card h2 {
+    padding-bottom: 1rem;
+}
+
 /*Tecnologias*/
 .technologies-content {
     display: flex;
     justify-content: center;
     flex-flow: column wrap;
     min-height: 100vh;
-    margin-bottom: 2rem;
-    padding-bottom: 7rem;
 }
 
 .technologies-content h1 {
+    font-size: 5rem;
     margin-bottom: 3rem;
 }
 
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--gap);
     justify-items: center;
+    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .logo-grid h3 {
     display: flex;
     justify-content: center;
+    align-items: center;
     font-size: 3rem;
 }
 
@@ -120,132 +138,19 @@
     transform: translate(-3%, 3%) scale(1.2) rotate(5deg);
 }
 
-
-/*Competências*/
-.competencias-content {
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: left;
-    min-height: 100vh;
-}
-
 /*Contato*/
-.contato-content {
+.contact-content {
     display: flex;
-    flex-flow: column nowrap;
     justify-content: center;
+    flex-flow: column wrap;
     min-height: 100vh;
-}
-
-.detalhes-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1.5fr);
-    gap: var(--gap);
-    counter-reset: counter-grid;
-}
-
-.main-detalhes {
-    margin-bottom: 2rem;
-}
-
-.description-detalhes {
-    padding-bottom: 7rem;
-}
-
-.detalhes-grid h3 {
-    position: relative;
-    font-size: 5rem;
-    padding-left: 2rem;
-    padding-bottom: 3rem;
-}
-
-.detalhes-grid h3::before {
-    counter-increment: counter-grid;
-    content: counter(counter-grid);
-    position: absolute;
-    font-size: 3rem;
-    font-style: italic;
-    top: -1rem;
-    left: -1rem;
-    transform: rotate(30%);
-}
-
-.main-valores {
-    margin-bottom: 2rem;
-    padding-bottom: 7rem;
-}
-
-.resposive-table {
-    overflow: hidden;
-    overflow-x: auto;
-}
-
-.contact {
-    grid-column: 2;
-}
-
-
-.contact-content h2 {
-    text-align: center;
-}
-
-.form-grid,
-.form-group button {
-    text-align: right;
-}
-
-.contact .form-grid {
-    border: none;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--gap);
-}
-
-.form-grid legend {
-    text-align: left;
-    margin-bottom: 5rem;
-}
-
-.form-group {
-    flex: 1 1 320PX;
-}
-
-.form-group label {
-    display: block;
 }
 
 .form-group input,
 .form-group textarea {
     padding: 1rem 2rem;
-    width: 100%;
+    width: 70%;
     font-size: 2rem;
-}
-
-body .full-width {
-    width: 100%;
-    flex: 1 1 100%;
-}
-
-.form-group button {
-    border: 0.3rem solid var(--primary-color);
-    padding: 1.5rem 2rem;
-    font-size: 2rem;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-    color: var(--secondary-color);
-    background: var(--primary-color);
-}
-
-.form-group button:hover {
-    color: var(--secondary-color);
-    border: 0.3rem solid var(--tertiary-color);
-    background: var(--tertiary-color);
-    transform: scale(1.07);
-}
-
-.form-group ::placeholder {
-    color: var(--tertiary-color);
 }
 
 .back-to-top {
@@ -264,6 +169,7 @@ body .full-width {
     border: 0.1rem solid var(--primary-color);
 }
 
+/*Botão para voltar ao início da página*/
 .back-to-top:hover {
     width: 8rem;
     height: 8rem;
