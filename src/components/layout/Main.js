@@ -1,5 +1,5 @@
-import React from 'react';
 import mainData from '../../data/mainData';
+import EmailService from '../../services/EmailJS';
 import '../../styles/global/Base.css';
 import '../../styles/global/Layout.css';
 import '../../styles/components/Main.css';
@@ -32,19 +32,21 @@ const Main = () => {
           <div className="section-content experience-content">
             <div className="experience">
               <h1>{mainData.experienceTitle}</h1>
+              {mainData.experience.map((experience, index) => (
+                <div className="experience-cards" key={index}>
+                  <div className="company-name">
+                    <h2>{experience.enterprise.name}</h2>
+                  </div>
+                  <div className="company-description">
+                    {experience.enterprise.description.map(
+                      (description, idx) => (
+                        <p key={idx}>{description}</p>
+                      )
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
-            {mainData.experience.map((experience, index) => (
-              <div className="experience-cards" key={index}>
-                <div className="company-name">
-                  <h2>{experience.enterprise.name}</h2>
-                </div>
-                <div className="company-description">
-                  {experience.enterprise.description.map((description, idx) => (
-                    <p key={idx}>{description}</p>
-                  ))}
-                </div>
-              </div>
-            ))}
           </div>
         </section>
         <section id="academic-training-section" className="bg-black section">
@@ -66,44 +68,35 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="technologies" className="bg-white section">
+        <section id="technologies-section" className="bg-white section">
           <div className="section-content technologies-content">
-            <h1>{mainData.technologiesTitle}</h1>
-            <div className="logo-grid">
-              {mainData.technologiesLogos.map((logos, index) => (
-                <div className="logo-card" key={index}>
-                  <img src={logos.src} alt={logos.alt} />
-                  <h3>{logos.name}</h3>
-                </div>
-              ))}
+            <div className="technologies">
+              <h1>{mainData.technologiesTitle}</h1>
+              <div className="logo-grid">
+                {mainData.technologiesLogos.map((logos, index) => (
+                  <div className="logo-card" key={index}>
+                    <img src={logos.src} alt={logos.alt} />
+                    <h3>{logos.name}</h3>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </section>
         <section id="contact-section" className="bg-black section">
           <div className="section-content contact-content contact">
             <div className="contact">
-              <h2 className="main-values">{mainData.contatoH1}</h2>
+              <h1 className="main-values">{mainData.contatoH1}</h1>
               <legend>{mainData.contatoDescription}</legend>
             </div>
             <div className="form-group">
-              <form>
-                {mainData.dadosContato.map((item, index) => (
-                  <div key={index} className="form-group">
-                    <input
-                      type={item.type}
-                      name={item.name}
-                      id={item.id}
-                      placeholder={item.placeholder}
-                    />
-                  </div>
-                ))}
-              </form>
+              <EmailService />
             </div>
           </div>
         </section>
       </main>
-      <a href="#home" className="back-to-top">
-        <h1>➤</h1>
+      <a href="#profile-section" className="back-to-top">
+        <p>&#11205;</p>
       </a>
     </>
   );

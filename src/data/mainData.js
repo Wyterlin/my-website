@@ -97,40 +97,22 @@ const mainData = {
   contatoDescription: 'Entre em contato para mais informações.',
   dadosContato: [
     {
+      id: 'name',
       type: 'text',
-      name: 'first_Name',
-      id: 'first_Name',
-      placeholder: 'Primeiro nome',
+      name: 'name',
+      placeholder: 'Nome',
     },
     {
-      type: 'text',
-      name: 'last_Name',
-      id: 'last_Name',
-      placeholder: 'Último nome',
-    },
-    {
+      id: 'email',
       type: 'email',
       name: 'email',
-      id: 'email',
-      placeholder: 'Email',
+      placeholder: 'E-mail',
     },
     {
-      type: 'tel',
-      name: 'phone',
-      id: 'phone',
-      placeholder: 'Telefone',
-    },
-    {
+      id: 'message',
       type: 'text',
       name: 'message',
-      id: 'message',
       placeholder: 'Mensagem',
-    },
-    {
-      type: 'submit',
-      name: 'submit',
-      id: 'submit',
-      value: 'Enviar',
     },
   ],
 };
