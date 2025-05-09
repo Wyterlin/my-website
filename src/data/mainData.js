@@ -58,31 +58,37 @@ const mainData = {
       name: 'JS',
       src: logoJS,
       alt: 'Java Script',
+      className: 'left',
     },
     {
       name: 'Python',
       src: logoPython,
       alt: 'Python',
+      className: 'left',
     },
     {
       name: 'React',
       src: logoReact,
       alt: 'React',
+      className: 'left',
     },
     {
       name: 'HTML',
       src: logoHtml,
       alt: 'HTML',
+      className: 'right',
     },
     {
       name: 'CSS',
       src: logoCss,
       alt: 'CSS',
+      className: 'right',
     },
     {
       name: 'MySQL',
       src: logoMySql,
       alt: 'MySQL',
+      className: 'right',
     },
   ],
 

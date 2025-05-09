@@ -68,7 +68,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="technologies-section" className="bg-white section">
+        <section id="technologies-section" className="bg-technologies section">
           <div className="section-content technologies-content">
             <div className="technologies">
               <h1>{mainData.technologiesTitle}</h1>

@@ -121,7 +121,6 @@
 
 .logo-grid {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
     gap: var(--gap);
     justify-items: center;
 }
