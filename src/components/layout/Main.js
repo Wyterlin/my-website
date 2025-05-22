@@ -72,13 +72,21 @@ const Main = () => {
           <div className="section-content technologies-content">
             <div className="technologies">
               <h1>{mainData.technologiesTitle}</h1>
-              <div className="logo-grid">
-                {mainData.technologiesLogos.map((logos, index) => (
-                  <div className="logo-card" key={index}>
-                    <img src={logos.src} alt={logos.alt} />
-                    <h3>{logos.name}</h3>
-                  </div>
-                ))}
+              <div className="technologies-logo">
+                <div className="logo-grid-l">
+                  {mainData.technologiesLogosL.map((logos, index) => (
+                    <div className="logo-card" key={index}>
+                      <img src={logos.src} alt={logos.alt} />
+                    </div>
+                  ))}
+                </div>
+                <div className="logo-grid-r">
+                  {mainData.technologiesLogosR.map((logos, index) => (
+                    <div className="logo-card" key={index}>
+                      <img src={logos.src} alt={logos.alt} />
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

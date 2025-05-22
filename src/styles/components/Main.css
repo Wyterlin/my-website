@@ -104,46 +104,62 @@
 .technologies-content {
     display: flex;
     justify-content: center;
-    flex-flow: column wrap;
     min-height: 100vh;
 }
 
-.technologies {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 1rem;
-    border-radius: 3rem;
-}
-
 .technologies h1 {
+    margin: 7rem;
+    display: flex;
+    justify-content: center;
     font-size: 5rem;
     padding-bottom: 3rem;
 }
 
-.logo-grid {
-    display: grid;
-    gap: var(--gap);
-    justify-items: center;
-}
-
-.logo-grid h3 {
+.technologies {
     display: flex;
     justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+    flex-flow: column wrap;
+    min-height: 100vh;
 }
 
-.logo-card {
+.technologies-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.logo-grid-l {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     width: 100%;
-    max-width: 10rem;
-    overflow: hidden;
+}
+
+.logo-grid-r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
 }
 
 .logo-card img {
-    transition: all 300ms ease-in-out;
     max-width: 100%;
-    width: 10rem;
-    height: 10rem;
 }
+
+.logo-card {
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 20%;
+}
+
+.logo-grid-l:hover>:not(:hover),
+.logo-grid-r:hover>:not(:hover) {
+    opacity: 0.3;
+}
+
+.logo-card:hover {
+    transform: scale(1.1);
+}
+
 
 /* Contato */
 .contact-content {
