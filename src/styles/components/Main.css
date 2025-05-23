@@ -49,7 +49,7 @@
 }
 
 .experience {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem;
     border-radius: 3rem;
 }
@@ -102,24 +102,16 @@
 
 /*Tecnologias*/
 .technologies-content {
-    display: flex;
-    justify-content: center;
     min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .technologies h1 {
-    margin: 7rem;
     display: flex;
-    justify-content: center;
+    margin-bottom: 5rem;
+    margin-top: 10%;
     font-size: 5rem;
-    padding-bottom: 3rem;
-}
-
-.technologies {
-    display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
-    min-height: 100vh;
 }
 
 .technologies-logo {
@@ -141,18 +133,18 @@
     width: 100%;
 }
 
-.logo-card img {
-    max-width: 100%;
-}
-
 .logo-card {
     transition: 0.5s ease;
     cursor: pointer;
     width: 20%;
 }
 
-.logo-grid-l:hover>:not(:hover),
-.logo-grid-r:hover>:not(:hover) {
+.logo-card img {
+    max-width: 50%;
+}
+
+.technologies-logo:hover .logo-grid-l>:not(:hover),
+.technologies-logo:hover .logo-grid-r>:not(:hover) {
     opacity: 0.3;
 }
 
