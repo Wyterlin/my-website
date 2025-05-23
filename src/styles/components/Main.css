@@ -49,7 +49,7 @@
 }
 
 .experience {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 1rem;
     border-radius: 3rem;
 }
@@ -102,49 +102,56 @@
 
 /*Tecnologias*/
 .technologies-content {
-    display: flex;
-    justify-content: center;
-    flex-flow: column wrap;
     min-height: 100vh;
-}
-
-.technologies {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 1rem;
-    border-radius: 3rem;
+    display: flex;
+    flex-flow: column wrap;
 }
 
 .technologies h1 {
-    font-size: 5rem;
-    padding-bottom: 3rem;
-}
-
-.logo-grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: var(--gap);
-    justify-items: center;
-}
-
-.logo-grid h3 {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
+    margin-bottom: 5rem;
+    margin-top: 10%;
+    font-size: 5rem;
+}
+
+.technologies-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.logo-grid-l {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.logo-grid-r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
 }
 
 .logo-card {
-    width: 100%;
-    max-width: 10rem;
-    overflow: hidden;
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 20%;
 }
 
 .logo-card img {
-    transition: all 300ms ease-in-out;
-    max-width: 100%;
-    width: 10rem;
-    height: 10rem;
+    max-width: 50%;
 }
+
+.technologies-logo:hover .logo-grid-l>:not(:hover),
+.technologies-logo:hover .logo-grid-r>:not(:hover) {
+    opacity: 0.3;
+}
+
+.logo-card:hover {
+    transform: scale(1.1);
+}
+
 
 /* Contato */
 .contact-content {
