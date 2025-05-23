@@ -10,6 +10,8 @@ const EmailService = () => {
     message: '',
     current_year: '',
   });
+  const [isSending, setIsSending] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -33,12 +35,12 @@ const EmailService = () => {
     if (!validateForm()) {
       return;
     }
-
+    setIsSending(true);
+    setSent(false);
     const updatedFormData = {
       ...formData,
       current_year: new Date().getFullYear(),
     };
-
     emailjs
       .send(
         'service_hzobohx',
@@ -55,9 +57,12 @@ const EmailService = () => {
             message: '',
             current_year: '',
           });
+          setSent(true);
+          setIsSending(false);
         },
         (error) => {
           alert('Erro ao enviar o email, tente novamente mais tarde.');
+          setIsSending(false);
         }
       );
   };
@@ -74,6 +79,7 @@ const EmailService = () => {
             value={formData[item.name]}
             onChange={handleChange}
             className="input-field"
+            disabled={isSending || sent}
           />
           <label htmlFor={item.id} className="form-label">
             {item.placeholder}
@@ -81,25 +87,31 @@ const EmailService = () => {
         </div>
       ))}
       <div className="send-form">
-        <div class="container">
-          <div class="center">
-            <button class="btn">
+        <div className="container">
+          <div className="center">
+            <button className="btn" type="submit" disabled={isSending || sent}>
               <svg
                 width="180px"
                 height="60px"
                 viewBox="0 0 180 60"
-                class="border"
+                className="border"
               >
                 <polyline
                   points="179,1 179,59 1,59 1,1 179,1"
-                  class="bg-line"
+                  className="bg-line"
                 />
                 <polyline
                   points="179,1 179,59 1,59 1,1 179,1"
-                  class="hl-line"
+                  className="hl-line"
                 />
               </svg>
-              <span>Enviar</span>
+              <span>
+                {sent
+                  ? 'Mensagem Enviada!'
+                  : isSending
+                  ? 'Enviando...'
+                  : 'Enviar'}
+              </span>
             </button>
           </div>
         </div>
