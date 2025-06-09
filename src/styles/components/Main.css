@@ -1,36 +1,24 @@
+@import '../global/Global.css';
+@import '../global/Themes.css';
+@import '../global/Sections.css';
 @import '../global/Buttons.css';
-
-/*Sections*/
 
 /*Perfil*/
 .profile-content {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--gap);
-    min-height: 100vh;
 }
 
-/*Layout*/
-.about-content,
-.image-menu {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-}
-
-/*Título*/
+/*Profile*/
 .about-content h1 {
-    font-size: 5rem;
-    padding-bottom: 3rem;
+    margin-bottom: var(--margin-bottom);
 }
 
-/*Descrição*/
 .about-content p {
-    font-size: 2.5rem;
-    padding-bottom: 3rem;
+    margin-bottom: var(--margin-bottom);
 }
 
-/*Imagem*/
 .image-menu img {
     max-width: 80%;
     max-width: 100%;
@@ -38,62 +26,21 @@
 }
 
 /*Experiência*/
-.experience-content {
-    display: flex;
-    text-align: left;
-    flex-direction: column;
-    justify-content: center;
-    max-width: 100%;
-    min-height: 100vh;
-    flex-wrap: nowrap;
-}
-
-.experience {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1rem;
-    border-radius: 3rem;
-}
-
-/*Título*/
 .experience h1 {
-    font-size: 5rem;
-    padding-bottom: 3rem;
-}
-
-/*Empresas*/
-.experience-cards {
-    padding-bottom: 1rem;
-}
-
-/*Descrição*/
-.company-name h2 {
-    font-size: 3.5rem;
+    margin-bottom: var(--margin-bottom);
 }
 
 .company-description {
-    font-size: 2rem;
-    padding: 0 2rem 2rem 3rem;
+    margin: var(--margin-bottom);
 }
 
 /*Formação Acadêmica*/
-.academic-training-content {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    min-height: 100vh;
-}
-
 .academic-training h1 {
-    font-size: 5rem;
-    padding-bottom: 3rem;
-}
-
-.academic-training h2 {
-    font-size: 3.5rem;
+    margin-bottom: var(--margin-bottom);
 }
 
 .details-card {
-    padding-bottom: 3rem;
+    margin-bottom: var(--margin-bottom);
 }
 
 .details-card h2 {
@@ -101,17 +48,15 @@
 }
 
 /*Tecnologias*/
+.section,
 .technologies-content {
-    min-height: 100vh;
-    display: flex;
-    flex-flow: column wrap;
+    display: block;
 }
 
 .technologies h1 {
     display: flex;
     margin-bottom: 5rem;
     margin-top: 10%;
-    font-size: 5rem;
 }
 
 .technologies-logo {
@@ -152,8 +97,7 @@
     transform: scale(1.1);
 }
 
-
-/* Contato */
+/* Contact */
 .contact-content {
     display: flex;
     justify-content: center;
@@ -163,16 +107,13 @@
 }
 
 .contact h1 {
-    font-size: 5rem;
-    margin-bottom: 3rem;
+    margin-bottom: var(--margin-bottom);
 }
-
 
 .form-group input,
 .form-group textarea {
     padding: 1rem 2rem;
     width: 100%;
-    font-size: 2rem;
 }
 
 .form-field {
@@ -186,10 +127,9 @@
     font-family: inherit;
     width: 100%;
     border: 0;
-    border-bottom: 2px solid var(--primary);
+    border-bottom: 2px solid var(--tertiary-color);
     outline: 0;
-    font-size: 1.3rem;
-    color: var(--white);
+    color: var(--secondary-color);
     padding: 7px 0;
     background: transparent;
     transition: border-color 0.2s;
@@ -200,7 +140,6 @@
 }
 
 .input-field:placeholder-shown~.form-label {
-    font-size: 2rem;
     cursor: text;
     top: 20px;
 }
@@ -210,21 +149,19 @@
     top: 0;
     display: block;
     transition: 0.2s;
-    font-size: 1.7rem;
-    color: var(--gray);
+    color: var(--quintennial-color);
     pointer-events: none;
 }
 
 .input-field:focus~.form-label {
-    font-size: 1.3rem;
     top: 0;
-    color: var(--primary);
+    color: var(--tertiary-color);
     font-weight: 700;
 }
 
 .input-field:focus {
     font-weight: 700;
-    border-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-image: linear-gradient(to right, var(--tertiary-color), var(--quaternary-color));
     border-image-slice: 1;
 }
 
@@ -232,9 +169,4 @@
 .input-field:required,
 .input-field:invalid {
     box-shadow: none;
-}
-
-.body .full-width {
-    width: 100%;
-    flex: 1 1 100%;
 }

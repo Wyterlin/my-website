@@ -1,14 +1,27 @@
 import mainData from '../../data/mainData';
 import EmailService from '../../services/EmailJS';
-import '../../styles/global/Base.css';
-import '../../styles/global/Layout.css';
+import useTheme from '../useTheme.js';
 import '../../styles/components/Main.css';
 
 const Main = () => {
+  const [theme, toggleTheme] = useTheme();
   return (
     <>
       <main>
-        <section id="profile-section" className="bg-black-wpp section">
+        {/* Theme Toggle */}
+          <div className="theme-toggle">
+            <label className="theme-switch">
+              <input
+                type="checkbox"
+                id="btn-theme-toggle"
+                checked={theme === 'dark'}
+                onChange={toggleTheme}
+                aria-label="Alternar tema escuro/claro"
+              />
+              <span className="slider"></span>
+            </label>
+          </div>
+        <section id="profile-section">
           <div className="section-content profile-content">
             <div className="about-content">
               <div>
@@ -28,7 +41,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="experience-section" className="bg-white-wpp section">
+        <section id="experience-section">
           <div className="section-content experience-content">
             <div className="experience">
               <h1>{mainData.experienceTitle}</h1>
@@ -49,10 +62,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section
-          id="academic-training-section"
-          className="bg-black-wpp section"
-        >
+        <section id="academic-training-section">
           <div className="section-content academic-training-content">
             <div className="academic-training">
               <h1>{mainData.academicTrainingTitle}</h1>
@@ -71,7 +81,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="technologies-section" className="bg-technologies section">
+        <section id="technologies-section" className="sct-technologies section">
           <div className="section-content technologies-content">
             <div className="technologies">
               <h1>{mainData.technologiesTitle}</h1>
@@ -94,7 +104,7 @@ const Main = () => {
             </div>
           </div>
         </section>
-        <section id="contact-section" className="bg-ctn section">
+        <section id="contact-section" className="sct-contact section">
           <div className="section-content contact-content contact">
             <div className="contact">
               <h1 className="main-values">{mainData.contatoH1}</h1>
