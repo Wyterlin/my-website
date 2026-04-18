@@ -1,0 +1,240 @@
+@import '../global/Buttons.css';
+
+/*Sections*/
+
+/*Perfil*/
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--gap);
+    min-height: 100vh;
+}
+
+/*Layout*/
+.about-content,
+.image-menu {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+/*Título*/
+.about-content h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+/*Descrição*/
+.about-content p {
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
+
+/*Imagem*/
+.image-menu img {
+    max-width: 80%;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Experiência*/
+.experience-content {
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+    min-height: 100vh;
+    flex-wrap: nowrap;
+}
+
+.experience {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1rem;
+    border-radius: 3rem;
+}
+
+/*Título*/
+.experience h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+/*Empresas*/
+.experience-cards {
+    padding-bottom: 1rem;
+}
+
+/*Descrição*/
+.company-name h2 {
+    font-size: 3.5rem;
+}
+
+.company-description {
+    font-size: 2rem;
+    padding: 0 2rem 2rem 3rem;
+}
+
+/*Formação Acadêmica*/
+.academic-training-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.academic-training h1 {
+    font-size: 5rem;
+    padding-bottom: 3rem;
+}
+
+.academic-training h2 {
+    font-size: 3.5rem;
+}
+
+.details-card {
+    padding-bottom: 3rem;
+}
+
+.details-card h2 {
+    padding-bottom: 1rem;
+}
+
+/*Tecnologias*/
+.technologies-content {
+    min-height: 100vh;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.technologies h1 {
+    display: flex;
+    margin-bottom: 5rem;
+    margin-top: 10%;
+    font-size: 5rem;
+}
+
+.technologies-logo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.logo-grid-l {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.logo-grid-r {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 100%;
+}
+
+.logo-card {
+    transition: 0.5s ease;
+    cursor: pointer;
+    width: 20%;
+}
+
+.logo-card img {
+    max-width: 50%;
+}
+
+.technologies-logo:hover .logo-grid-l>:not(:hover),
+.technologies-logo:hover .logo-grid-r>:not(:hover) {
+    opacity: 0.3;
+}
+
+.logo-card:hover {
+    transform: scale(1.1);
+}
+
+
+/* Contato */
+.contact-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    min-height: 100vh;
+    width: 70%;
+}
+
+.contact h1 {
+    font-size: 5rem;
+    margin-bottom: 3rem;
+}
+
+
+.form-group input,
+.form-group textarea {
+    padding: 1rem 2rem;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.form-field {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.input-field {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--primary);
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--white);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input-field::placeholder {
+    color: transparent;
+}
+
+.input-field:placeholder-shown~.form-label {
+    font-size: 2rem;
+    cursor: text;
+    top: 20px;
+}
+
+.form-label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 1.7rem;
+    color: var(--gray);
+    pointer-events: none;
+}
+
+.input-field:focus~.form-label {
+    font-size: 1.3rem;
+    top: 0;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.input-field:focus {
+    font-weight: 700;
+    border-image: linear-gradient(to right, var(--primary), var(--secondary));
+    border-image-slice: 1;
+}
+
+/* Reset input validation visual */
+.input-field:required,
+.input-field:invalid {
+    box-shadow: none;
+}
+
+.body .full-width {
+    width: 100%;
+    flex: 1 1 100%;
+}

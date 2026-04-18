@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #f8f8f8; padding: 16px; }
+.grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 8px; }
+.swatch { border-radius: 6px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.15); }
+.color { height: 72px; }
+.label { background: #fff; padding: 6px 8px; }
+.name { font-size: 11px; font-weight: 600; color: #333; }
+.val  { font-size: 10px; color: #888; margin-top: 1px; font-family: monospace; }
+.border-swatch .color { border: 1px solid #e0e0e0; }
+</style></head>
+<body>
+<div class="grid">
+  <div class="swatch">
+    <div class="color" style="background:#000000"></div>
+    <div class="label"><div class="name">Black</div><div class="val">#000000</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#0d1117"></div>
+    <div class="label"><div class="name">Dark Surface</div><div class="val">#0d1117</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#3d3d3d"></div>
+    <div class="label"><div class="name">Gray 800</div><div class="val">#3d3d3d</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#6e7681"></div>
+    <div class="label"><div class="name">Gray / Muted</div><div class="val">#6e7681</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#c9d1d9"></div>
+    <div class="label"><div class="name">Text Muted</div><div class="val">#c9d1d9</div></div>
+  </div>
+  <div class="swatch border-swatch">
+    <div class="color" style="background:#f5f5f5"></div>
+    <div class="label"><div class="name">Gray 100</div><div class="val">#f5f5f5</div></div>
+  </div>
+  <div class="swatch border-swatch">
+    <div class="color" style="background:#ffffff"></div>
+    <div class="label"><div class="name">White</div><div class="val">#ffffff</div></div>
+  </div>
+
+  <div class="swatch">
+    <div class="color" style="background:#2a4db5"></div>
+    <div class="label"><div class="name">Blue Dark</div><div class="val">#2a4db5</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#4169E1"></div>
+    <div class="label"><div class="name">Royal Blue</div><div class="val">#4169E1</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#6b8ff5"></div>
+    <div class="label"><div class="name">Blue Light</div><div class="val">#6b8ff5</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#a07830"></div>
+    <div class="label"><div class="name">Gold Dark</div><div class="val">#a07830</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#C9A84C"></div>
+    <div class="label"><div class="name">Gold</div><div class="val">#C9A84C</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#e8c97a"></div>
+    <div class="label"><div class="name">Gold Light</div><div class="val">#e8c97a</div></div>
+  </div>
+  <div class="swatch">
+    <div class="color" style="background:#21262d"></div>
+    <div class="label"><div class="name">Border</div><div class="val">#21262d</div></div>
+  </div>
+</div>
+</body></html>

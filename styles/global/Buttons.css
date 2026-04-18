@@ -1,0 +1,72 @@
+/*Botão Enviar Formulário*/
+.send-form {
+    display: flex;
+    justify-content: right;
+    margin-top: 7rem;
+}
+
+.container {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.btn {
+    width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid var(--primary);
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+svg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    fill: none;
+    stroke: var(--secondary);
+    stroke-dasharray: 150 480;
+    stroke-dashoffset: 150;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover svg {
+    stroke-dashoffset: -480;
+}
+
+.btn span {
+    color: white;
+    font-size: 18px;
+    font-weight: 100;
+}
+
+/*Botão para voltar ao início da página*/
+.back-to-top {
+    position: fixed;
+    bottom: 3rem;
+    right: 3rem;
+    background: var(--primary);
+    width: 5rem;
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--secondary-color);
+}
+
+.back-to-top p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 3rem;
+}
+
+.back-to-top:hover {
+    width: 6rem;
+    height: 6rem;
+    transition: all 200ms ease-in-out;
+    max-width: 100%;
+}

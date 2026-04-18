@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Open Sans', sans-serif; background: #f0f0f0; padding: 14px; }
+.row { display: flex; gap: 8px; margin-bottom: 8px; flex-wrap: wrap; }
+.chip { display: flex; align-items: center; gap: 8px; background: #fff; border-radius: 6px; padding: 8px 12px; box-shadow: 0 1px 3px rgba(0,0,0,.1); flex: 1; min-width: 140px; }
+.dot { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; border: 1px solid rgba(0,0,0,.08); }
+.info .name { font-size: 11px; font-weight: 600; color: #222; }
+.info .role { font-size: 10px; color: #888; margin-top: 1px; }
+</style></head>
+<body>
+<div class="row">
+  <div class="chip"><div class="dot" style="background:#000"></div><div class="info"><div class="name">--text-primary</div><div class="role">Body text, headings</div></div></div>
+  <div class="chip"><div class="dot" style="background:#fff;border:1px solid #ccc"></div><div class="info"><div class="name">--text-inverse</div><div class="role">Text on dark bg</div></div></div>
+  <div class="chip"><div class="dot" style="background:#c9d1d9"></div><div class="info"><div class="name">--text-muted</div><div class="role">Footer body text</div></div></div>
+  <div class="chip"><div class="dot" style="background:#6e7681"></div><div class="info"><div class="name">--text-subtle</div><div class="role">Form labels, hints</div></div></div>
+</div>
+<div class="row">
+  <div class="chip"><div class="dot" style="background:#000"></div><div class="info"><div class="name">--bg-dark</div><div class="role">Dark sections bg</div></div></div>
+  <div class="chip"><div class="dot" style="background:#fff;border:1px solid #ccc"></div><div class="info"><div class="name">--bg-light</div><div class="role">Light sections bg</div></div></div>
+  <div class="chip"><div class="dot" style="background:#0d1117"></div><div class="info"><div class="name">--bg-surface</div><div class="role">Footer background</div></div></div>
+  <div class="chip"><div class="dot" style="background:#21262d"></div><div class="info"><div class="name">--footer-border</div><div class="role">Footer dividers</div></div></div>
+</div>
+<div class="row">
+  <div class="chip"><div class="dot" style="background:#4169E1"></div><div class="info"><div class="name">--accent</div><div class="role">Nav underline, CTA</div></div></div>
+  <div class="chip"><div class="dot" style="background:#2a4db5"></div><div class="info"><div class="name">--accent-hover</div><div class="role">Hover/active state</div></div></div>
+  <div class="chip"><div class="dot" style="background:#C9A84C"></div><div class="info"><div class="name">--accent-gold</div><div class="role">Decorative accent</div></div></div>
+</div>
+</body></html>
