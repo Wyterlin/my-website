@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChristianWS — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 62.5%; scroll-behavior: smooth; }
+body { font-family: 'Open Sans', sans-serif; font-size: 1.6rem; color: #fff; background: #05070d; overflow-x: hidden; }
+
+/* ── TOKENS ── */
+:root {
+  --blue:       #4169E1;
+  --blue-dark:  #2a4db5;
+  --blue-glow:  rgba(65,105,225,0.18);
+  --gold:       #C9A84C;
+  --gold-dim:   rgba(201,168,76,0.15);
+  --dark:       #05070d;
+  --dark2:      #0a0d18;
+  --surface:    #0d1117;
+  --border:     rgba(255,255,255,0.07);
+  --muted:      #8892a4;
+  --gap:        3rem;
+}
+
+/* ── GLOBAL GRID CANVAS ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(65,105,225,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(65,105,225,0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: rgba(5,7,13,0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.menu-content {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 5rem; height: 6.8rem; max-width: 1440px; margin: 0 auto;
+}
+.logo a {
+  font-family: 'Montserrat', sans-serif; font-size: 2rem; font-weight: 900;
+  text-transform: uppercase; color: #fff; text-decoration: none;
+  letter-spacing: 0.1em; display: flex; align-items: center; gap: 10px;
+}
+.logo-bracket { color: var(--blue); }
+.logo-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
+
+.secoes ul { list-style: none; display: flex; align-items: center; gap: 0.2rem; }
+.secoes ul li a {
+  position: relative; display: inline-block; text-decoration: none;
+  padding: 0.6rem 1.4rem; font-size: 1.25rem; font-weight: 600;
+  color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase;
+  transition: color 200ms ease;
+}
+.secoes ul li a::after {
+  content: ''; position: absolute; bottom: -1px; left: 50%;
+  width: 0; height: 2px; background: var(--blue);
+  transition: width 260ms ease, left 260ms ease;
+}
+.secoes ul li a:hover { color: #fff; }
+.secoes ul li a:hover::after { width: calc(100% - 2.8rem); left: 1.4rem; }
+.secoes ul li a.active { color: #fff; }
+.secoes ul li a.active::after { width: calc(100% - 2.8rem); left: 1.4rem; }
+
+.nav-cta {
+  margin-left: 1.2rem;
+  background: var(--blue) !important; color: #fff !important;
+  border-radius: 4px; padding: 0.7rem 2rem !important;
+  transition: background 200ms ease, box-shadow 200ms ease !important;
+}
+.nav-cta::after { display: none !important; }
+.nav-cta:hover { background: var(--blue-dark) !important; box-shadow: 0 4px 20px rgba(65,105,225,0.45) !important; }
+
+/* ── SHARED SECTION ── */
+.section { position: relative; min-height: 100vh; }
+.section-inner { max-width: 1280px; margin: 0 auto; padding: 12rem 5rem 8rem; position: relative; z-index: 2; }
+
+/* ── HERO / PROFILE ── */
+#profile-section {
+  background: var(--dark);
+  display: flex; align-items: center; overflow: hidden;
+}
+
+/* Radial glow behind hero */
+#profile-section::after {
+  content: ''; position: absolute;
+  top: -200px; left: -200px;
+  width: 900px; height: 900px;
+  background: radial-gradient(ellipse, rgba(65,105,225,0.18) 0%, transparent 70%);
+  pointer-events: none; z-index: 1;
+  animation: pulse-glow 8s ease-in-out infinite alternate;
+}
+@keyframes pulse-glow {
+  from { transform: scale(1) translate(0, 0); opacity: 1; }
+  to   { transform: scale(1.12) translate(40px, 30px); opacity: 0.7; }
+}
+
+.hero-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6rem; align-items: center; min-height: 80vh;
+}
+
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 1.2rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--gold); margin-bottom: 2rem;
+}
+.hero-eyebrow::before {
+  content: ''; display: inline-block; width: 28px; height: 1px; background: var(--gold);
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 900;
+  font-size: clamp(4rem, 5vw, 6.5rem); text-transform: uppercase;
+  line-height: 1.05; letter-spacing: -0.01em; color: #fff;
+  margin-bottom: 2.4rem;
+}
+.hero-title .blue { color: var(--blue); }
+
+.hero-desc {
+  font-size: 1.65rem; color: var(--muted); line-height: 1.75;
+  max-width: 52ch; margin-bottom: 3.5rem;
+}
+
+.hero-actions { display: flex; gap: 1.6rem; align-items: center; }
+.btn-hero-primary {
+  font-family: 'Open Sans', sans-serif; font-size: 1.35rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  background: var(--blue); color: #fff; border: none;
+  padding: 1.4rem 3.2rem; cursor: pointer; border-radius: 4px;
+  transition: background 250ms ease, box-shadow 250ms ease, transform 150ms ease;
+  text-decoration: none; display: inline-block;
+}
+.btn-hero-primary:hover { background: var(--blue-dark); box-shadow: 0 6px 28px rgba(65,105,225,0.5); transform: translateY(-1px); }
+
+.btn-hero-ghost {
+  font-family: 'Open Sans', sans-serif; font-size: 1.35rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  background: transparent; color: var(--muted);
+  border: 1.5px solid rgba(255,255,255,0.15); padding: 1.35rem 3rem;
+  cursor: pointer; border-radius: 4px; transition: color 200ms ease, border-color 200ms ease;
+  text-decoration: none; display: inline-block;
+}
+.btn-hero-ghost:hover { color: #fff; border-color: rgba(255,255,255,0.4); }
+
+/* Code card */
+.hero-code {
+  background: rgba(13,17,23,0.9);
+  border: 1px solid rgba(65,105,225,0.2);
+  border-radius: 12px; padding: 3rem 3.5rem;
+  position: relative; overflow: hidden;
+}
+.hero-code::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--blue), var(--gold));
+}
+.code-dots { display: flex; gap: 6px; margin-bottom: 2rem; }
+.code-dots span { width: 12px; height: 12px; border-radius: 50%; }
+.code-dots span:nth-child(1) { background: #ff5f57; }
+.code-dots span:nth-child(2) { background: #febc2e; }
+.code-dots span:nth-child(3) { background: #28c840; }
+.code-line { font-family: 'Courier New', monospace; font-size: 1.45rem; line-height: 2; }
+.c-comment { color: #4a5568; }
+.c-key     { color: #6b8ff5; }
+.c-str     { color: #C9A84C; }
+.c-green   { color: #48bb78; }
+.c-indent  { padding-left: 2em; }
+.c-indent2 { padding-left: 4em; }
+.code-cursor {
+  display: inline-block; width: 2px; height: 1.6rem;
+  background: var(--blue); animation: blink 1s step-end infinite; vertical-align: middle;
+}
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+/* ── STATS BAR ── */
+.stats-bar {
+  position: relative; z-index: 2;
+  border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+  background: rgba(10,13,24,0.7); backdrop-filter: blur(8px);
+  padding: 2.4rem 5rem;
+}
+.stats-inner {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  max-width: 1280px; margin: 0 auto; gap: 2rem;
+}
+.stat { text-align: center; padding: 1rem; border-right: 1px solid var(--border); }
+.stat:last-child { border-right: none; }
+.stat-num {
+  font-family: 'Montserrat', sans-serif; font-size: 3.2rem;
+  font-weight: 900; color: var(--blue); line-height: 1;
+}
+.stat-num span { color: var(--gold); font-size: 2rem; }
+.stat-label { font-size: 1.15rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 0.4rem; }
+
+/* ── EXPERIENCE ── */
+#experience-section { background: #080b14; }
+
+.section-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 1.1rem; font-weight: 600; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--blue); margin-bottom: 1.6rem;
+}
+.section-tag::before { content: ''; width: 28px; height: 1px; background: var(--blue); }
+
+.section-title {
+  font-family: 'Montserrat', sans-serif; font-size: clamp(3.5rem, 4vw, 5.5rem);
+  font-weight: 900; text-transform: uppercase; line-height: 1.08;
+  margin-bottom: 5rem; color: #fff;
+}
+
+.exp-timeline { position: relative; padding-left: 3rem; }
+.exp-timeline::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+  width: 1px; background: linear-gradient(to bottom, var(--blue), transparent);
+}
+.exp-item { position: relative; margin-bottom: 4rem; }
+.exp-item::before {
+  content: ''; position: absolute; left: -3.4rem; top: 0.4rem;
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--blue); box-shadow: 0 0 0 4px var(--blue-glow);
+}
+.exp-company {
+  font-family: 'Montserrat', sans-serif; font-size: 2.4rem;
+  font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 0.8rem;
+}
+.exp-role {
+  font-size: 1.4rem; font-weight: 600; color: var(--gold);
+  text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 1.4rem;
+}
+.exp-desc { font-size: 1.55rem; color: var(--muted); line-height: 1.8; margin-bottom: 1.6rem; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.exp-tag {
+  font-family: 'Courier New', monospace;
+  background: rgba(65,105,225,0.1); border: 1px solid rgba(65,105,225,0.25);
+  color: #6b8ff5; font-size: 1.15rem; padding: 4px 12px; border-radius: 3px;
+}
+
+/* ── EDUCATION ── */
+#academic-section {
+  background: var(--dark);
+  position: relative; overflow: hidden;
+}
+/* diagonal stripe accent */
+#academic-section::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 0;
+  background: repeating-linear-gradient(
+    -55deg,
+    transparent, transparent 60px,
+    rgba(65,105,225,0.025) 60px, rgba(65,105,225,0.025) 61px
+  );
+}
+
+.edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.edu-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 3rem; border-radius: 6px;
+  transition: background 250ms ease, border-color 250ms ease, transform 250ms ease;
+}
+.edu-card:hover { background: rgba(201,168,76,0.06); border-color: rgba(201,168,76,0.5); transform: translateY(-3px); }
+.edu-card-tag {
+  font-size: 1.05rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 1rem;
+}
+.edu-card h2 {
+  font-family: 'Montserrat', sans-serif; font-size: 2.2rem;
+  font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: 0.8rem;
+}
+.edu-card p { font-size: 1.5rem; color: var(--muted); line-height: 1.6; }
+.edu-card .edu-status {
+  margin-top: 1.6rem; display: inline-block; font-size: 1.1rem; font-weight: 600;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 3px 10px; border-radius: 3px;
+}
+.status-ongoing { background: rgba(65,105,225,0.15); color: #6b8ff5; }
+.status-done    { background: rgba(72,187,120,0.12); color: #48bb78; }
+
+/* ── TECHNOLOGIES ── */
+#tech-section {
+  background: #080b14;
+  position: relative; overflow: hidden;
+}
+/* right-side glow */
+#tech-section::after {
+  content: ''; position: absolute; right: -200px; top: 50%;
+  transform: translateY(-50%);
+  width: 700px; height: 700px;
+  background: radial-gradient(ellipse, rgba(65,105,225,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.tech-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 760px;
+}
+.tech-card {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 3rem 2rem; border: 1px solid var(--border); border-radius: 8px;
+  background: rgba(255,255,255,0.02); cursor: pointer;
+  transition: background 300ms ease, border-color 300ms ease, transform 300ms ease, box-shadow 300ms ease;
+}
+.tech-grid:hover .tech-card:not(:hover) { opacity: 0.3; transform: scale(0.97); }
+.tech-card:hover {
+  background: rgba(65,105,225,0.1); border-color: rgba(65,105,225,0.5);
+  transform: scale(1.06); box-shadow: 0 8px 32px rgba(65,105,225,0.2);
+}
+.tech-icon {
+  font-family: 'Montserrat', sans-serif; font-weight: 900; font-size: 2.8rem;
+  color: var(--blue); margin-bottom: 1.2rem; letter-spacing: -0.02em;
+}
+.tech-name { font-size: 1.3rem; color: var(--muted); text-align: center; letter-spacing: 0.04em; }
+
+/* ── CONTACT ── */
+#contact-section {
+  background: var(--dark);
+  position: relative; overflow: hidden;
+}
+#contact-section::before {
+  content: ''; position: absolute; bottom: -300px; right: -200px;
+  width: 800px; height: 800px;
+  background: radial-gradient(ellipse, rgba(201,168,76,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
+.contact-info { padding-top: 1rem; }
+.contact-info p { font-size: 1.6rem; color: var(--muted); line-height: 1.8; margin-bottom: 3rem; }
+
+.contact-links { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-link {
+  display: flex; align-items: center; gap: 1.2rem;
+  font-size: 1.5rem; color: var(--muted); text-decoration: none;
+  transition: color 200ms ease;
+}
+.contact-link:hover { color: #fff; }
+.contact-link-icon {
+  width: 3.6rem; height: 3.6rem; border-radius: 6px;
+  background: rgba(65,105,225,0.12); border: 1px solid rgba(65,105,225,0.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.6rem; flex-shrink: 0;
+}
+
+/* Form */
+.contact-form { display: flex; flex-direction: column; gap: 0; }
+.form-field { position: relative; padding-top: 1.5rem; margin-bottom: 2.4rem; }
+.input-field {
+  font-family: 'Open Sans', sans-serif; width: 100%;
+  border: 0; border-bottom: 1px solid rgba(255,255,255,0.12);
+  outline: 0; font-size: 1.6rem; color: #fff;
+  padding: 0.8rem 0; background: transparent;
+  transition: border-color 250ms ease;
+}
+.input-field::placeholder { color: transparent; }
+.input-field:placeholder-shown ~ .form-label { font-size: 1.6rem; top: 2rem; }
+.form-label {
+  position: absolute; top: 0; font-size: 1.15rem; color: var(--muted);
+  pointer-events: none; transition: all 0.22s ease;
+  letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
+}
+.input-field:focus ~ .form-label { top: 0; font-size: 1.1rem; color: var(--blue); }
+.input-field:focus { border-color: var(--blue); }
+.input-field:required, .input-field:invalid { box-shadow: none; }
+textarea.input-field { resize: none; height: 100px; }
+
+.form-submit { margin-top: 1rem; }
+.btn-submit {
+  font-family: 'Open Sans', sans-serif; font-size: 1.35rem; font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  background: var(--blue); color: #fff; border: none;
+  padding: 1.4rem 3.5rem; cursor: pointer; border-radius: 4px;
+  transition: background 250ms ease, box-shadow 250ms ease, transform 150ms ease;
+}
+.btn-submit:hover { background: var(--blue-dark); box-shadow: 0 6px 24px rgba(65,105,225,0.45); transform: translateY(-1px); }
+
+/* ── FOOTER ── */
+.footer {
+  background: #030508;
+  border-top: 1px solid var(--border);
+  padding: 5rem 5rem 3rem;
+}
+.footer-inner { display: flex; justify-content: space-between; gap: 4rem; max-width: 1280px; margin: 0 auto; flex-wrap: wrap; }
+.footer-brand { max-width: 300px; }
+.footer-brand-name {
+  font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900;
+  color: #fff; margin-bottom: 1.2rem; letter-spacing: 0.06em;
+}
+.footer-brand-name span { color: var(--blue); }
+.footer-brand p { font-size: 1.4rem; color: var(--muted); line-height: 1.7; }
+.footer-col h4 {
+  font-size: 1.1rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: #fff; margin-bottom: 1.8rem;
+}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.footer-col ul li a {
+  font-size: 1.4rem; color: var(--muted); text-decoration: none;
+  transition: color 200ms ease;
+}
+.footer-col ul li a:hover { color: #fff; }
+.footer-bottom {
+  max-width: 1280px; margin: 4rem auto 0;
+  border-top: 1px solid var(--border); padding-top: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 1.2rem; color: #3d4555;
+}
+.footer-bottom-accent { color: var(--blue); }
+
+/* ── BACK TO TOP ── */
+.back-to-top {
+  position: fixed; bottom: 3rem; right: 3rem;
+  background: rgba(5,7,13,0.9); backdrop-filter: blur(8px);
+  width: 4.8rem; height: 4.8rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; text-decoration: none; font-size: 2rem;
+  border: 1px solid rgba(65,105,225,0.4); z-index: 99;
+  transition: background 200ms ease, border-color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+.back-to-top:hover {
+  background: var(--blue); border-color: var(--blue);
+  transform: translateY(-3px); box-shadow: 0 6px 20px rgba(65,105,225,0.45);
+}
+
+/* ── TWEAKS PANEL ── */
+#tweaks-panel {
+  display: none; position: fixed; bottom: 24px; left: 24px;
+  background: #0d1117; border: 1px solid #222;
+  border-radius: 10px; padding: 16px 20px;
+  z-index: 999; min-width: 210px; font-size: 12px; color: #fff;
+  box-shadow: 0 12px 40px rgba(0,0,0,.6);
+}
+#tweaks-panel h4 {
+  font-size: 10px; text-transform: uppercase; letter-spacing: .1em;
+  color: #555; margin-bottom: 12px; font-family: 'Montserrat', sans-serif;
+}
+.tweak-row { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; gap: 12px; }
+.tweak-row label { font-size: 11px; color: #888; }
+.tweak-row input[type=color] { width: 28px; height: 22px; border: none; background: none; cursor: pointer; padding: 0; }
+.tweak-row select { background: #1a1a1a; border: 1px solid #333; color: #fff; font-size: 11px; padding: 2px 6px; border-radius: 3px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="menu-content">
+    <div class="logo">
+      <a href="#profile-section">
+        <span class="logo-bracket">&lt;/&gt;</span>
+        CWS
+        <span class="logo-dot"></span>
+      </a>
+    </div>
+    <div class="secoes">
+      <ul>
+        <li><a href="#profile-section" class="active">Perfil</a></li>
+        <li><a href="#experience-section">Experiência</a></li>
+        <li><a href="#academic-section">Formação</a></li>
+        <li><a href="#tech-section">Tecnologias</a></li>
+        <li><a href="#contact-section" class="nav-cta">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="profile-section" class="section" data-screen-label="01 Perfil">
+  <div class="section-inner">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">IT Analyst &amp; Developer</div>
+        <h1 class="hero-title">
+          Christian<br>
+          <span class="blue">Wyterlin</span><br>
+          Silveira
+        </h1>
+        <p class="hero-desc">
+          Especialista em SAP Business One (HANA) — consultas, procedures, Crystal Reports e automações. Em transição para desenvolvimento Full-Stack com JavaScript, Python e React.
+        </p>
+        <div class="hero-actions">
+          <a href="#contact-section" class="btn-hero-primary">Entre em Contato</a>
+          <a href="#experience-section" class="btn-hero-ghost">Ver Experiência</a>
+        </div>
+      </div>
+      <div>
+        <div class="hero-code">
+          <div class="code-dots"><span></span><span></span><span></span></div>
+          <div class="code-line c-comment">// christian.wyterlin.js</div>
+          <div class="code-line">&nbsp;</div>
+          <div class="code-line"><span class="c-key">const</span> developer = {</div>
+          <div class="code-line c-indent"><span class="c-key">name</span>: <span class="c-str">"Christian Wyterlin"</span>,</div>
+          <div class="code-line c-indent"><span class="c-key">role</span>: <span class="c-str">"IT Analyst"</span>,</div>
+          <div class="code-line c-indent"><span class="c-key">company</span>: <span class="c-str">"FastDrywall"</span>,</div>
+          <div class="code-line c-indent"><span class="c-key">certified</span>: <span class="c-str">"Ramo Consultant"</span>,</div>
+          <div class="code-line c-indent"><span class="c-key">stack</span>: [</div>
+          <div class="code-line c-indent2"><span class="c-str">"SAP HANA"</span>, <span class="c-str">"SQL"</span>, <span class="c-str">"Python"</span>,</div>
+          <div class="code-line c-indent2"><span class="c-str">"JavaScript"</span>, <span class="c-str">"React"</span></div>
+          <div class="code-line c-indent">],</div>
+          <div class="code-line c-indent"><span class="c-key">status</span>: <span class="c-green">"open to opportunities"</span></div>
+          <div class="code-line">}; <span class="code-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="stats-bar">
+    <div class="stats-inner">
+      <div class="stat">
+        <div class="stat-num">3<span>+</span></div>
+        <div class="stat-label">Anos de Experiência</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--gold)">SAP</div>
+        <div class="stat-label">Business One HANA</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6<span>+</span></div>
+        <div class="stat-label">Tecnologias</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">8º</div>
+        <div class="stat-label">Sem. Ciência da Computação</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience-section" class="section" data-screen-label="02 Experiência">
+  <div class="section-inner">
+    <div class="section-tag">Trajetória</div>
+    <h2 class="section-title">Experiências</h2>
+    <div class="exp-timeline">
+      <div class="exp-item">
+        <div class="exp-company">FastDrywall</div>
+        <div class="exp-role">IT Analyst · Consultor Certificado Ramo</div>
+        <p class="exp-desc">
+          Suporte e treinamentos de utilização do sistema SAP Business One. Desenvolvimento ativo de processos, consultas e automações no SAP HANA. TransactionNotification (bloqueios, updates, PostTransaction), Procedures, Views, Crystal Reports, DTW e layouts de UI.
+        </p>
+        <p class="exp-desc">
+          Automações de processos internos utilizando Python. Aprofundamento em SQL HANA com consultas otimizadas para análise e manutenção do banco de dados do ERP.
+        </p>
+        <div class="tag-row">
+          <span class="exp-tag">SAP Business One</span>
+          <span class="exp-tag">SAP HANA</span>
+          <span class="exp-tag">Crystal Reports</span>
+          <span class="exp-tag">SQL</span>
+          <span class="exp-tag">Python</span>
+          <span class="exp-tag">DTW</span>
+          <span class="exp-tag">TransactionNotification</span>
+          <span class="exp-tag">Procedures</span>
+          <span class="exp-tag">Views</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="academic-section" class="section" data-screen-label="03 Formação">
+  <div class="section-inner">
+    <div class="section-tag">Educação</div>
+    <h2 class="section-title">Formação Acadêmica</h2>
+    <div class="edu-grid">
+      <div class="edu-card">
+        <div class="edu-card-tag">Graduação</div>
+        <h2>Estácio</h2>
+        <p>Bacharelado em Ciência da Computação</p>
+        <span class="edu-status status-ongoing">8º Semestre · Em Andamento</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-tag">Especialização</div>
+        <h2>Dev Academy</h2>
+        <p>DEV — SAP Business One</p>
+        <span class="edu-status status-ongoing">Em Andamento</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-tag">Curso</div>
+        <h2>Alura</h2>
+        <p>HTML e CSS — Desenvolvimento Web</p>
+        <span class="edu-status status-done">Concluído</span>
+      </div>
+      <div class="edu-card">
+        <div class="edu-card-tag">Formação</div>
+        <h2>Microlins</h2>
+        <p>Certificado Aluno Nota Mil · Liderança</p>
+        <span class="edu-status status-done">Concluído</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECHNOLOGIES -->
+<section id="tech-section" class="section" data-screen-label="04 Tecnologias">
+  <div class="section-inner">
+    <div class="section-tag">Stack</div>
+    <h2 class="section-title">Tecnologias<br>Utilizadas</h2>
+    <div class="tech-grid">
+      <div class="tech-card"><div class="tech-icon">JS</div><div class="tech-name">JavaScript</div></div>
+      <div class="tech-card"><div class="tech-icon">Py</div><div class="tech-name">Python</div></div>
+      <div class="tech-card"><div class="tech-icon">⚛</div><div class="tech-name">React</div></div>
+      <div class="tech-card"><div class="tech-icon">H5</div><div class="tech-name">HTML5</div></div>
+      <div class="tech-card"><div class="tech-icon">CSS</div><div class="tech-name">CSS3</div></div>
+      <div class="tech-card"><div class="tech-icon">SQL</div><div class="tech-name">MySQL / HANA</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact-section" class="section" data-screen-label="05 Contato">
+  <div class="section-inner">
+    <div class="section-tag">Contato</div>
+    <h2 class="section-title">Vamos Conversar</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>Disponível para novos projetos, consultorias em SAP Business One e oportunidades de desenvolvimento. Entre em contato e responderei em breve.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/christian-wyterlin-silveira" target="_blank" class="contact-link">
+            <div class="contact-link-icon">in</div>
+            LinkedIn
+          </a>
+          <a href="https://github.com/Wyterlin" target="_blank" class="contact-link">
+            <div class="contact-link-icon">&lt;/&gt;</div>
+            GitHub — Wyterlin
+          </a>
+          <a href="https://dev.to/silveira" target="_blank" class="contact-link">
+            <div class="contact-link-icon">dev</div>
+            Blog Dev.to
+          </a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="return false">
+        <div class="form-field">
+          <input class="input-field" type="text" placeholder="Nome" id="f-name" required>
+          <label class="form-label" for="f-name">Nome</label>
+        </div>
+        <div class="form-field">
+          <input class="input-field" type="email" placeholder="E-mail" id="f-email" required>
+          <label class="form-label" for="f-email">E-mail</label>
+        </div>
+        <div class="form-field">
+          <textarea class="input-field" placeholder="Mensagem" id="f-msg" required></textarea>
+          <label class="form-label" for="f-msg">Mensagem</label>
+        </div>
+        <div class="form-submit">
+          <button type="submit" class="btn-submit">Enviar Mensagem</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" data-screen-label="06 Footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-brand-name"><span>&lt;/&gt;</span> ChristianW$</div>
+      <p>Conectando código, café e criatividade. Especialista SAP Business One &amp; desenvolvedor Full-Stack em formação.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="https://github.com/Wyterlin/my-website" target="_blank">Documentação</a></li>
+        <li><a href="https://github.com/Wyterlin?tab=repositories" target="_blank">Repositórios</a></li>
+        <li><a href="https://dev.to/silveira" target="_blank">Blog Dev</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contato</h4>
+      <ul>
+        <li><a href="https://www.linkedin.com/in/christian-wyterlin-silveira" target="_blank">LinkedIn</a></li>
+        <li><a href="https://github.com/Wyterlin" target="_blank">GitHub</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; <span id="year"></span> ChristianWS — Todos os direitos reservados.</span>
+    <span class="footer-bottom-accent">Feito com &lt;/&gt; &amp; ♥</span>
+  </div>
+</footer>
+
+<a href="#profile-section" class="back-to-top">⮍</a>
+
+<!-- TWEAKS PANEL -->
+<div id="tweaks-panel">
+  <h4>Tweaks</h4>
+  <div class="tweak-row">
+    <label>Accent</label>
+    <input type="color" id="tw-accent" value="#4169E1">
+  </div>
+  <div class="tweak-row">
+    <label>Gold</label>
+    <input type="color" id="tw-gold" value="#C9A84C">
+  </div>
+  <div class="tweak-row">
+    <label>Font</label>
+    <select id="tw-font">
+      <option value="'Open Sans', sans-serif">Open Sans</option>
+      <option value="'Segoe UI', sans-serif">Segoe UI</option>
+      <option value="Georgia, serif">Georgia</option>
+    </select>
+  </div>
+</div>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{"accent":"#4169E1","gold":"#C9A84C","font":"'Open Sans', sans-serif"}/*EDITMODE-END*/;
+
+function applyTweaks(t) {
+  document.documentElement.style.setProperty('--blue', t.accent);
+  document.documentElement.style.setProperty('--gold', t.gold);
+  document.body.style.fontFamily = t.font;
+  document.getElementById('tw-accent').value = t.accent;
+  document.getElementById('tw-gold').value = t.gold;
+  document.getElementById('tw-font').value = t.font;
+}
+applyTweaks(TWEAK_DEFAULTS);
+
+document.getElementById('tw-accent').addEventListener('input', e => {
+  document.documentElement.style.setProperty('--blue', e.target.value);
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits:{accent:e.target.value}}, '*');
+});
+document.getElementById('tw-gold').addEventListener('input', e => {
+  document.documentElement.style.setProperty('--gold', e.target.value);
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits:{gold:e.target.value}}, '*');
+});
+document.getElementById('tw-font').addEventListener('change', e => {
+  document.body.style.fontFamily = e.target.value;
+  window.parent.postMessage({type:'__edit_mode_set_keys', edits:{font:e.target.value}}, '*');
+});
+
+window.addEventListener('message', e => {
+  if (e.data?.type === '__activate_edit_mode') document.getElementById('tweaks-panel').style.display = 'block';
+  if (e.data?.type === '__deactivate_edit_mode') document.getElementById('tweaks-panel').style.display = 'none';
+});
+window.parent.postMessage({type:'__edit_mode_available'}, '*');
+</script>
+</body>
+</html>

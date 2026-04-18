@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { font-size: 62.5%; }
+body { font-family: 'Open Sans', sans-serif; background: #f4f4f4; padding: 0; }
+
+nav {
+  background: #fff;
+  border-bottom: 1px solid #e8e8e8;
+  box-shadow: 0 1px 12px rgba(0,0,0,0.07);
+}
+.menu-content {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 4rem; height: 7rem; max-width: 1200px; margin: 0 auto;
+}
+
+/* Logo */
+.logo a {
+  font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 900;
+  text-transform: uppercase; color: #000; text-decoration: none;
+  letter-spacing: 0.06em; display: flex; align-items: center; gap: 10px;
+}
+.logo-bracket { color: #4169E1; }
+.logo-dot { width: 6px; height: 6px; background: #C9A84C; border-radius: 50%; display: inline-block; margin-bottom: 2px; }
+
+/* Links */
+.secoes ul { list-style: none; display: flex; align-items: center; gap: 0.4rem; }
+.secoes ul li a {
+  position: relative; display: inline-block; text-decoration: none;
+  padding: 0.6rem 1.4rem; font-size: 1.35rem; font-weight: 600;
+  color: #555; letter-spacing: 0.05em; text-transform: uppercase;
+  border-radius: 4px; transition: color 200ms ease;
+}
+.secoes ul li a::after {
+  content: ''; display: block; position: absolute;
+  bottom: -1px; left: 50%; width: 0; height: 2px;
+  background: #4169E1; transition: all 280ms ease-in-out;
+  transform: translateX(-50%);
+}
+.secoes ul li a:hover { color: #000; }
+.secoes ul li a:hover::after,
+.secoes ul li a.active::after { width: calc(100% - 2.8rem); }
+.secoes ul li a.active { color: #000; }
+
+/* CTA pill */
+.nav-cta {
+  margin-left: 1rem;
+  background: #4169E1; color: #fff !important;
+  border-radius: 4px;
+  transition: background 200ms ease !important;
+}
+.nav-cta:hover { background: #2a4db5 !important; color: #fff !important; }
+.nav-cta::after { display: none !important; }
+
+.sep { width: 3px; height: 3px; background: #ddd; border-radius: 50%; }
+</style></head>
+<body>
+<nav>
+  <div class="menu-content">
+    <div class="logo">
+      <a href="#">
+        <span class="logo-bracket">&lt;/&gt;</span>
+        CWS
+        <span class="logo-dot"></span>
+      </a>
+    </div>
+    <div class="secoes">
+      <ul>
+        <li><a href="#" class="active">Perfil</a></li>
+        <li><span class="sep"></span></li>
+        <li><a href="#">Experiência</a></li>
+        <li><span class="sep"></span></li>
+        <li><a href="#">Formação</a></li>
+        <li><span class="sep"></span></li>
+        <li><a href="#">Tecnologias</a></li>
+        <li><a href="#" class="nav-cta">Contato</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</body></html>
