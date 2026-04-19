@@ -5,6 +5,45 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ChristianWS — Portfolio</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#05070d">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <!-- Nav bar -->
+    <rect x="0" y="0" width="1200" height="56" fill="#0a0d18"/>
+    <rect x="60" y="20" width="80" height="16" rx="3" fill="#4169E1" opacity="0.9"/>
+    <rect x="800" y="22" width="60" height="12" rx="2" fill="#8892a4" opacity="0.5"/>
+    <rect x="880" y="22" width="60" height="12" rx="2" fill="#8892a4" opacity="0.5"/>
+    <rect x="960" y="22" width="60" height="12" rx="2" fill="#8892a4" opacity="0.5"/>
+    <rect x="1060" y="18" width="80" height="20" rx="4" fill="#4169E1"/>
+    <!-- Hero text block -->
+    <rect x="60" y="110" width="200" height="8" rx="2" fill="#C9A84C" opacity="0.7"/>
+    <rect x="60" y="132" width="420" height="48" rx="4" fill="#fff" opacity="0.9"/>
+    <rect x="60" y="192" width="320" height="48" rx="4" fill="#4169E1" opacity="0.8"/>
+    <rect x="60" y="252" width="380" height="20" rx="3" fill="#8892a4" opacity="0.4"/>
+    <rect x="60" y="280" width="360" height="16" rx="3" fill="#8892a4" opacity="0.3"/>
+    <rect x="60" y="320" width="160" height="40" rx="4" fill="#4169E1"/>
+    <rect x="236" y="320" width="140" height="40" rx="4" fill="none" stroke="#4a5568" stroke-width="2"/>
+    <!-- Code card -->
+    <rect x="640" y="90" width="500" height="300" rx="12" fill="#0d1117" stroke="#4169E1" stroke-width="1" stroke-opacity="0.3"/>
+    <rect x="640" y="90" width="500" height="3" rx="1" fill="url(#grad)"/>
+    <defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#4169E1"/><stop offset="100%" stop-color="#C9A84C"/></linearGradient></defs>
+    <circle cx="668" cy="118" r="7" fill="#ff5f57"/>
+    <circle cx="692" cy="118" r="7" fill="#febc2e"/>
+    <circle cx="716" cy="118" r="7" fill="#28c840"/>
+    <rect x="668" y="142" width="180" height="8" rx="2" fill="#4a5568"/>
+    <rect x="668" y="162" width="260" height="8" rx="2" fill="#6b8ff5" opacity="0.7"/>
+    <rect x="688" y="182" width="220" height="8" rx="2" fill="#C9A84C" opacity="0.6"/>
+    <rect x="688" y="202" width="200" height="8" rx="2" fill="#C9A84C" opacity="0.5"/>
+    <rect x="688" y="222" width="240" height="8" rx="2" fill="#C9A84C" opacity="0.4"/>
+    <rect x="688" y="242" width="180" height="8" rx="2" fill="#48bb78" opacity="0.7"/>
+    <rect x="668" y="262" width="60" height="8" rx="2" fill="#6b8ff5" opacity="0.5"/>
+    <!-- Stats bar -->
+    <rect x="0" y="430" width="1200" height="80" fill="#0a0d18" opacity="0.8"/>
+    <rect x="160" y="450" width="60" height="24" rx="3" fill="#4169E1" opacity="0.6"/>
+    <rect x="460" y="450" width="60" height="24" rx="3" fill="#C9A84C" opacity="0.6"/>
+    <rect x="760" y="450" width="60" height="24" rx="3" fill="#4169E1" opacity="0.6"/>
+    <rect x="1000" y="450" width="60" height="24" rx="3" fill="#4169E1" opacity="0.5"/>
+  </svg>
+</template>
 <style>
 /* ── RESET & BASE ── */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -325,6 +364,7 @@ nav {
 #contact-section {
   background: var(--dark);
   position: relative; overflow: hidden;
+  min-height: auto;
 }
 #contact-section::before {
   content: ''; position: absolute; bottom: -300px; right: -200px;
@@ -333,11 +373,11 @@ nav {
   pointer-events: none;
 }
 
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8rem; align-items: start; }
-.contact-info { padding-top: 1rem; }
-.contact-info p { font-size: 1.6rem; color: var(--muted); line-height: 1.8; margin-bottom: 3rem; }
+.contact-grid { display: flex; flex-direction: column; max-width: 480px; margin: 0 auto; width: 100%; align-items: center; }
+.contact-info { width: 100%; text-align: center; }
+.contact-info p { font-size: 1.6rem; color: var(--muted); line-height: 1.8; margin-bottom: 2.4rem; }
 
-.contact-links { display: flex; flex-direction: column; gap: 1.2rem; }
+.contact-links { display: flex; flex-direction: row; gap: 1.6rem; margin-bottom: 3.5rem; align-items: center; justify-content: center; flex-wrap: wrap; }
 .contact-link {
   display: flex; align-items: center; gap: 1.2rem;
   font-size: 1.5rem; color: var(--muted); text-decoration: none;
@@ -352,8 +392,8 @@ nav {
 }
 
 /* Form */
-.contact-form { display: flex; flex-direction: column; gap: 0; }
-.form-field { position: relative; padding-top: 1.5rem; margin-bottom: 2.4rem; }
+.contact-form { display: flex; flex-direction: column; gap: 0; width: 100%; max-width: 480px; margin: 0 auto; }
+.form-field { position: relative; padding-top: 2rem; margin-bottom: 2.4rem; width: 100%; }
 .input-field {
   font-family: 'Open Sans', sans-serif; width: 100%;
   border: 0; border-bottom: 1px solid rgba(255,255,255,0.12);
@@ -364,9 +404,11 @@ nav {
 .input-field::placeholder { color: transparent; }
 .input-field:placeholder-shown ~ .form-label { font-size: 1.6rem; top: 2rem; }
 .form-label {
-  position: absolute; top: 0; font-size: 1.15rem; color: var(--muted);
+  position: absolute; top: 0; left: 0; display: block;
+  font-size: 1.15rem; color: var(--muted);
   pointer-events: none; transition: all 0.22s ease;
   letter-spacing: 0.05em; text-transform: uppercase; font-weight: 600;
+  white-space: nowrap;
 }
 .input-field:focus ~ .form-label { top: 0; font-size: 1.1rem; color: var(--blue); }
 .input-field:focus { border-color: var(--blue); }
@@ -462,7 +504,7 @@ textarea.input-field { resize: none; height: 100px; }
     </div>
     <div class="secoes">
       <ul>
-        <li><a href="#profile-section" class="active">Perfil</a></li>
+        <li><a href="#profile-section">Perfil</a></li>
         <li><a href="#experience-section">Experiência</a></li>
         <li><a href="#academic-section">Formação</a></li>
         <li><a href="#tech-section">Tecnologias</a></li>
@@ -618,8 +660,7 @@ textarea.input-field { resize: none; height: 100px; }
 
 <!-- CONTACT -->
 <section id="contact-section" class="section" data-screen-label="05 Contato">
-  <div class="section-inner">
-    <div class="section-tag">Contato</div>
+  <div class="section-inner" style="display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:8rem;padding-bottom:6rem;">
     <h2 class="section-title">Vamos Conversar</h2>
     <div class="contact-grid">
       <div class="contact-info">
@@ -631,11 +672,11 @@ textarea.input-field { resize: none; height: 100px; }
           </a>
           <a href="https://github.com/Wyterlin" target="_blank" class="contact-link">
             <div class="contact-link-icon">&lt;/&gt;</div>
-            GitHub — Wyterlin
+            GitHub
           </a>
           <a href="https://dev.to/silveira" target="_blank" class="contact-link">
             <div class="contact-link-icon">dev</div>
-            Blog Dev.to
+            Blog Dev
           </a>
         </div>
       </div>
@@ -652,7 +693,7 @@ textarea.input-field { resize: none; height: 100px; }
           <textarea class="input-field" placeholder="Mensagem" id="f-msg" required></textarea>
           <label class="form-label" for="f-msg">Mensagem</label>
         </div>
-        <div class="form-submit">
+        <div class="form-submit" style="display:flex;justify-content:center;">
           <button type="submit" class="btn-submit">Enviar Mensagem</button>
         </div>
       </form>
@@ -662,30 +703,14 @@ textarea.input-field { resize: none; height: 100px; }
 
 <!-- FOOTER -->
 <footer class="footer" data-screen-label="06 Footer">
-  <div class="footer-inner">
+  <div class="footer-inner" style="justify-content:flex-start;">
     <div class="footer-brand">
       <div class="footer-brand-name"><span>&lt;/&gt;</span> ChristianW$</div>
-      <p>Conectando código, café e criatividade. Especialista SAP Business One &amp; desenvolvedor Full-Stack em formação.</p>
-    </div>
-    <div class="footer-col">
-      <h4>Recursos</h4>
-      <ul>
-        <li><a href="https://github.com/Wyterlin/my-website" target="_blank">Documentação</a></li>
-        <li><a href="https://github.com/Wyterlin?tab=repositories" target="_blank">Repositórios</a></li>
-        <li><a href="https://dev.to/silveira" target="_blank">Blog Dev</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contato</h4>
-      <ul>
-        <li><a href="https://www.linkedin.com/in/christian-wyterlin-silveira" target="_blank">LinkedIn</a></li>
-        <li><a href="https://github.com/Wyterlin" target="_blank">GitHub</a></li>
-      </ul>
+      <p>Conectando código, café e criatividade.</p>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="footer-bottom" style="justify-content:flex-end;">
     <span>&copy; <span id="year"></span> ChristianWS — Todos os direitos reservados.</span>
-    <span class="footer-bottom-accent">Feito com &lt;/&gt; &amp; ♥</span>
   </div>
 </footer>
 
